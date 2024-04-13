@@ -8,19 +8,10 @@ function Navbar() {
       <nav>
         <ul>
           <li>
-            <a href="#">Home</a>
+            <a href="#">Sign In</a>
           </li>
           <li>
-            <a href="#">About</a>
-          </li>
-          <li>
-            <a href="#">Contact</a>
-          </li>
-          <li>
-            <a href="#">Blog</a>
-          </li>
-          <li>
-            <a href="#">Something else</a>
+            <a href="#">Sign Up</a>
           </li>
         </ul>
       </nav>
