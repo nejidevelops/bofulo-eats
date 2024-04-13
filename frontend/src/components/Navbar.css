@@ -3,7 +3,6 @@ header {
   --_animationDistance: 500px;
   --_surfaceColorStart: hsl(0 10% 5%);
   --_surfaceColorEnd: hsl(0 50% 90% / 0.1);
-  --_textColorStart: hsl(0 10% 90%);
 
   padding: 1rem 3rem;
   margin-inline: auto;
@@ -11,9 +10,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: var(--_headerWidth, auto);
 
-  color: var(--_textColorStart);
   background-color: transparent;
 
   position: sticky;
@@ -61,11 +58,6 @@ header {
 }
 
 @keyframes stickyNav {
-  0%,
-  100% {
-    --_headerWidth: fit-content;
-  }
-
   100% {
     top: 0rem;
     color: black;
