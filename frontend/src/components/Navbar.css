@@ -42,6 +42,16 @@ header {
     padding: 0;
   }
 
+  li a {
+    padding: 8px;
+    border-radius: 16px;
+  }
+
+  li:first-child a {
+    background-color: #D91400;
+    color: white;
+  }
+
   a {
     color: black;
     text-decoration: none;
