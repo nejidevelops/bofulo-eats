@@ -1,0 +1,79 @@
+header {
+  --_animationStartsAfter: 50vh;
+  --_animationDistance: 500px;
+  --_surfaceColorStart: hsl(0 10% 5%);
+  --_surfaceColorEnd: hsl(0 50% 90% / 0.1);
+  --_textColorStart: hsl(0 10% 90%);
+
+  padding: 1rem 3rem;
+  margin-inline: auto;
+  margin-block: 0rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: var(--_headerWidth, auto);
+
+  color: var(--_textColorStart);
+  background-color: transparent;
+
+  position: sticky;
+  z-index: 1000;
+  top: 0rem;
+
+  @supports (animation-timeline: view()) {
+    /* top: -5rem; */
+
+    backdrop-filter: blur(0.35rem);
+
+    animation: stickyNav linear forwards;
+    animation-timeline: view();
+    animation-range-start: calc(100vh + var(--_animationStartsAfter));
+    animation-range-end: calc(
+      100vh + var(--_animationStartsAfter) + var(--_animationDistance)
+    );
+  }
+
+  .logo {
+    display: var(--_logoDisplay, block);
+    fill: currentColor;
+    height: 3rem;
+  }
+
+  ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+    font-weight: 500;
+
+    &:hover,
+    &:focus {
+      color: var(--clr-primary-300);
+      text-decoration: underline;
+      text-decoration-thickness: 0.07lh;
+      text-underline-offset: 0.17lh;
+    }
+  }
+}
+
+@keyframes stickyNav {
+  0%,
+  100% {
+    --_headerWidth: fit-content;
+  }
+
+  100% {
+    top: 0rem;
+    color: black;
+    width: 100%;
+    background-color: white;
+    box-shadow: inset 0 0 0.5rem hsl(0 0% 100% / 0.1),
+      0 0 0.75rem hsl(0 0% 0% / 0.3);
+  }
+}
